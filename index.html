@@ -15,30 +15,40 @@
 		/* General Styling */
 		body {
 			font: 1em/1.5 'Merriweather', Georgia, serif;
+			font-size: clamp(1rem, 2.5vw, 2rem);
 			padding: 3em 0;
 			font-display: auto;
+			margin: 0 inline;
+			display: grid;
+			gap: 2rem;
 		}
 
 		h1 {
 			font-family: 'Lato', Arial, sans-serif;
+			margin: 0 inline;
+			margin-left: 1rem;
+			margin-right: 1rem;
 		}
 
 		header,
 		footer {
 			text-align: center;
+			margin: 0 inline;
+			display: grid;
+			gap: 2rem;
 		}
 
 		figure {
-			margin: 3em auto;
+			margin: 0 inline;
 			max-width: 45em;
 			text-align: center;
 		}
 
 		figcaption {
-			margin-top: 1.5em;
+			margin-top: 0 inline;
 			font-style: italic;
 			font-weight: 300;
-			color: #CC9B70;
+			color: #452d18;
 			text-align: left;
 		}
 
@@ -48,11 +58,13 @@
 
 		figure.fw {
 			max-width: 100%;
+			margin: 0 inline;
 		}
 
 		figure.fw figcaption,
 		figure.half figcaption {
 			text-align: center;
+			margin: 0 inline;
 		}
 
 		figure.fw figcaption::after,
@@ -60,13 +72,22 @@
 			content: '-';
 		}
 
-		figure.half {
-			width: 50%;
-			float: left;
+		.figure-grp {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-auto-rows: 225px;
+			grid-auto-columns: 225px;
+			gap: 0em;
+			margin: 0 inline;
 		}
 
-		.figure-grp+.figure-grp figure {
-			margin-top: -3em;
+		figure.half {
+			width: 50%;
+			margin: 0 inline;
+		}
+
+		.figure-grp .figure-grp figure {
+			margin-top: 0 inline;
 		}
 
 		blockquote {
@@ -75,7 +96,7 @@
 			color: #777;
 			font-size: 1.2em;
 			max-width: 30em;
-			margin: 3em auto;
+			margin: 0 inline;
 		}
 
 		blockquote::before {
@@ -83,26 +104,33 @@
 		}
 
 		blockquote cite {
-			margin-top: 1.5em;
+			margin-top: 0 inline;
 			display: block;
 		}
 
 		p {
 			color: #444;
 			max-width: 45em;
-			margin-left: auto;
-			margin-right: auto;
+			margin: 0 inline;
+			margin-left: 2em;
+			margin-right: 2em;
+			display: grid;
+		}
+
+		.text {
+			margin: 0 inline;
 		}
 
 		img {
 			width: 100%;
 			height: auto;
 			display: block;
+			margin: 0 inline;
 		}
 
 		hr {
 			max-width: 45em;
-			margin: 3em auto;
+			margin: 0 inline;
 		}
 	</style>
 </head>
@@ -129,15 +157,20 @@
 
 	<!-- MAIN -->
 	<main>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore veniam, accusantium ducimus iure
-			exercitationem accusamus alias unde esse reiciendis. Eum!</p>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit, asperiores voluptates non maxime sequi
-			consectetur quasi mollitia corrupti excepturi veritatis qui voluptate corporis, quos perspiciatis cum
-			ducimus nostrum ex esse numquam necessitatibus, illum alias consequuntur eum odio adipisci? Doloremque
-			voluptates repudiandae quis ad excepturi facere, temporibus beatae ex atque sint ipsum omnis illo officiis
-			in cum, odio, eum maxime quidem consectetur. Voluptates facilis delectus architecto est dolore, perspiciatis
-			vitae quidem impedit nostrum esse fugit, velit hic eius laborum itaque reprehenderit repellat soluta
-			repellendus aliquam. Veritatis dolorem officia provident dolores, ad quas rerum autem est, totam id fugiat
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Dolore veniam, accusantium ducimus iure
+			exercitationem<br> accusamus alias unde esse reiciendis. Eum!</p>
+		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit,<br> asperiores voluptates non maxime sequi
+			consectetur quasi <br>mollitia corrupti excepturi veritatis qui voluptate corporis,<br> quos perspiciatis
+			cum
+			ducimus nostrum ex esse numquam<br> necessitatibus, illum alias consequuntur eum odio adipisci?<br>
+			Doloremque
+			voluptates repudiandae quis ad excepturi facere,<br> temporibus beatae ex atque sint ipsum omnis illo
+			officiis
+			in<br> cum, odio, eum maxime quidem consectetur. Voluptates facilis<br> delectus architecto est dolore,
+			perspiciatis
+			vitae quidem<br> impedit nostrum esse fugit, velit hic eius laborum itaque<br> reprehenderit repellat soluta
+			repellendus aliquam.<br> Veritatis dolorem officia provident dolores, ad quas<br> rerum autem est, totam id
+			fugiat
 			magni mollitia. Illo.</p>
 
 		<div class="figure-grp">
@@ -202,10 +235,16 @@
 			</figure>
 		</div> <!-- end figure-grp -->
 
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, quisquam voluptatum in ipsa provident
-			blanditiis nesciunt facere. Ea, officiis provident placeat fugit cupiditate minima enim veniam libero hic
-			tempore deserunt iusto qui harum vero consectetur suscipit, architecto cum voluptate assumenda. Eveniet
-			facere officiis ullam, est quasi debitis voluptates corporis culpa!</p>
+		<p class="text">Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br>
+			Obcaecati, quisquam voluptatum in ipsa provident
+			blanditiis<br>
+			nesciunt facere. Ea, officiis provident placeat fugit cupiditate<br>
+			minima enim veniam libero hic
+			tempore deserunt iusto qui harum<br>
+			vero consectetur suscipit, architecto cum voluptate assumenda.<br>
+			Eveniet
+			facere officiis ullam, est quasi debitis voluptates<br>
+			corporis culpa!</p>
 
 		<figure>
 			<img src="https://res.cloudinary.com/dtqn7kgwc/image/upload/f_auto,q_auto,w_300/v1667151298/IDMX268/office-4_qbe1jy.jpg"
